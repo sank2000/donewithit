@@ -1,11 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 
-import Screen from '../components/Screen';
-import ListItem from '../components/ListItem';
-import ListItemSeparatorComponent from '../components/ListItemSeparator';
-import colors from '../config/color';
+import { ListItem, ListItemSeparator } from '../components/lists';
+import colors from '../config/colors';
 import Icon from '../components/Icon';
+import Screen from '../components/Screen';
 
 const menuItems = [
   {
@@ -29,16 +28,16 @@ function AccountScreen(props) {
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Santhosh K"
-          subTitle="santhoshvelr@gmail.com"
-          image={require('../assets/san.jpg')}
+          title="Santhosh"
+          subTitle="programmingwithsan@gmail.com"
+          image={require('../assets/san.png')}
         />
       </View>
       <View style={styles.container}>
         <FlatList
           data={menuItems}
           keyExtractor={(menuItem) => menuItem.title}
-          ItemSeparatorComponent={ListItemSeparatorComponent}
+          ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
